@@ -1,0 +1,40 @@
+﻿@using CollegeFootballScorecard.Models
+@model IEnumerable<Teams>
+
+
+
+
+
+
+<div class="dropdown">
+    <button class="dropbtn">
+        Universities
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        @foreach (var team in Model)
+        {
+            <a href="/Teams/TeamGrade/@team">@team</a>
+        }
+
+    </div>
+</div>
+
+
+
+<div>
+    <table>
+        <tr>
+            <th>Colleges</th>
+            <th>Conference</th>
+        </tr>
+        @foreach (var team in Model)
+        {
+            <tr>
+                <td>@team.</td>
+                <td>@team.</td>
+            </tr>
+        }
+    </table>
+
+</div>
