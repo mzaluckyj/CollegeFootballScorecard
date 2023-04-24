@@ -9,8 +9,18 @@ namespace CollegeFootballScorecard.Controllers
     public class TeamsController : Controller
     {
 
-        public ActionResult Index()
+        private readonly IcfbRepo repo;
+
+        public TeamsController(IcfbRepo repo)
         {
+            this.repo = repo;
+        }
+
+
+        public IActionResult Index()
+        {
+            var conf = repo.GetConf();
+
             return View();
         }
 
